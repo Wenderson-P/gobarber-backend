@@ -2,7 +2,6 @@ import * as Yup from 'yup';
 import User from '../models/User';
 import Appointment from '../models/Appointment';
 
-
 class AppointmentController {
   async store(req, res) {
     const schema = Yup.object().shape({
@@ -23,7 +22,9 @@ class AppointmentController {
     });
 
     if (!isProvider) {
-      return res.status(401).json({ error: 'You can only create appointments with providers' });
+      return res
+        .status(401)
+        .json({ error: 'You can only create appointments with providers' });
     }
 
     const appointment = await Appointment.create({
