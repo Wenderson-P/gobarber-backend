@@ -3,6 +3,9 @@ import path from 'path';
 import * as Sentry from '@sentry/node';
 import sentryConfig from './config/sentry';
 import routes from './routes';
+
+import 'express-async-errors';
+
 import './database';
 
 class App {
