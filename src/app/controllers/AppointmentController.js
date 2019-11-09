@@ -158,7 +158,7 @@ class AppointmentController {
       },
     });
 
-    return res.json();
+    return res.json('Appointment canceled');
   }
 }
 
