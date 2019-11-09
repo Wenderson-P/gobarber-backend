@@ -12,12 +12,12 @@ class App {
   constructor() {
     this.server = express();
     Sentry.init(sentryConfig);
-    this.use(Sentry.Handlers.requestHandler());
     this.middlewares();
     this.routes();
   }
 
   middlewares() {
+    this.server.use(Sentry.Handlers.requestHandler());
     this.server.use(express.json());
     this.server.use(
       '/files',
