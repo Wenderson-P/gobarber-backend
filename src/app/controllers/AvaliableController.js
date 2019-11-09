@@ -50,6 +50,7 @@ class AvaliableController {
       return {
         time,
         value: format(value, "yyyy-MM-dd'T'HH:mm:ssxxx"),
+        avaliable: isAfter(value, new Date()),
       };
     });
     return res.json(avaliable);
