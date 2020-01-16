@@ -148,7 +148,7 @@ class AppointmentController {
       appointment,
     });
 
-    return res.json('Appointment canceled');
+    return res.json(appointment);
   }
 }
 
